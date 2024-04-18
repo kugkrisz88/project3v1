@@ -3,7 +3,7 @@ import random
 class Game:
     #Initialize the current condition of the game (default)
     def __init__(self):
-        self.word = ""
+        self.word = self.get_random_word()
         self.guesses = set()
         self.attempts = 6
     #A pool of random words and function to get a random word for the current game
