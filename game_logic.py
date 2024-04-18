@@ -1,3 +1,5 @@
+import random
+
 class Game:
     #Initialize the current condition of the game (default)
     def __init__(self):
@@ -6,6 +8,8 @@ class Game:
         self.attempts = 6
     #A pool of random words and function to get a random word for the current game
     def get_random_word(self):
+        words = ["apple", "banana", "orange", "grape"]
+        return random.choice(words)
     #A method to display the word with hidden letters (-)
     def display_word(self):
     #Check if the guess is correct, if not take one attempt away
