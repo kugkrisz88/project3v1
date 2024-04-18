@@ -22,6 +22,10 @@ class Game:
 
     #Check if the guess is correct, if not take one attempt away
     def check_guess(self, guess):
+        self.guesses.add(guess)
+        if guess not in self.word:
+            self.attempts -= 1
+
     #A method for checking game over conditions (The number of your attemps are 0 or you guessed the word)
     def is_game_over(self):
     #Runs the game loop till the gameover function is true
