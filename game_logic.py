@@ -31,4 +31,16 @@ class Game:
         return self.attempts == 0 or set(self.word) == self.guesses
     #Runs the game loop till the gameover function is true
     def run(self):
-    print("Welcome to Hangman!")
+        #Runs at the beginning of the game
+        print("Welcome to Hangman!")
+        #Runs till game over is True
+        while not self.is_game_over():
+            print("Attempts left:", self.attempts)
+            print("Word:", self.display_word())
+            guess = input("Guess a letter: ").lower()
+            self.check_guess(guess)
+        #Informs the player about the end state of the game (in both case prints out the word)    
+        if set(self.word) == self.guesses:
+            print("Congratulations! You guessed the word:", self.word)
+        else:
+            print("Sorry, you ran out of attempts. The word was:", self.word)
