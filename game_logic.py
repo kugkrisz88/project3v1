@@ -12,6 +12,14 @@ class Game:
         return random.choice(words)
     #A method to display the word with hidden letters (-)
     def display_word(self):
+        display = ""
+        for letter in self.word:
+            if letter in self.guesses:
+                display += letter
+            else:
+                display += "_"
+        return display
+
     #Check if the guess is correct, if not take one attempt away
     def check_guess(self, guess):
     #A method for checking game over conditions (The number of your attemps are 0 or you guessed the word)
