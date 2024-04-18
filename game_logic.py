@@ -1,11 +1,20 @@
 import random
 
+hangman_art_0 = """
+ _______
+ |     |
+ |     O
+ |    /|\\
+ |    / \\
+_|_
+"""
+
 class Game:
     #Initialize the current condition of the game (default)
     def __init__(self):
         self.word = self.get_random_word()
         self.guesses = set()
-        self.attempts = 6
+        self.attempts = 7
     #A pool of random words and function to get a random word for the current game
     def get_random_word(self):
         words = ["apple", "banana", "orange", "grape"]
@@ -32,15 +41,22 @@ class Game:
     #Runs the game loop till the gameover function is true
     def run(self):
         #Runs at the beginning of the game
-        print("Welcome to Hangman!")
+        print("##########################")
+        print("# Welcome to the 7 tides #")
+        print("##########################")
         #Runs till game over is True
         while not self.is_game_over():
+            print()
             print("Attempts left:", self.attempts)
+            print()
             print("Word:", self.display_word())
+            print()
             guess = input("Guess a letter: ").lower()
+            print("###################")
             self.check_guess(guess)
         #Informs the player about the end state of the game (in both case prints out the word)    
         if set(self.word) == self.guesses:
             print("Congratulations! You guessed the word:", self.word)
         else:
             print("Sorry, you ran out of attempts. The word was:", self.word)
+            print(hangman_art_0)

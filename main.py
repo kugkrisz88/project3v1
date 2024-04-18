@@ -4,6 +4,6 @@ def main():
     game = Game()
     game.run()
 
-#Ensures that main.py is the main entry and it runs directly from the Python interpreter
+#Ensures that main.py is the main entry and it runs directly from the Python interpreterg
 if __name__ == "__main__":
     main()
