@@ -28,6 +28,7 @@ class Game:
 
     #A method for checking game over conditions (The number of your attemps are 0 or you guessed the word)
     def is_game_over(self):
+        return self.attempts == 0 or set(self.word) == self.guesses
     #Runs the game loop till the gameover function is true
     def run(self):
     print("Welcome to Hangman!")
