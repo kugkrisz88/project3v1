@@ -67,6 +67,7 @@ class Game:
         # Informs the player about the end state of the game (in both cases, prints out the word)
         if set(self.word) == self.guesses:
             print("[bold green]Congratulations! You guessed the word:[/bold green] [bold green]" + self.word.capitalize() + "[/bold green]")
+            print("[bold green]" + lore_end + "[/bold green]")
         else:
             print("[bold red]Sorry, you ran out of attempts. The word was:[/bold red] [bold red]" + self.word.capitalize() + "[/bold red]")
             print("[bold red]" + hangman_art_0 + "[/bold red]")

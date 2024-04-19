@@ -118,3 +118,43 @@ lore = """
 |                                                                 |
 |________________________________________________________________|
 """
+lore_end = """
+ ________________________________________________________________
+/                                                                 \
+|  As the pirate contemplated his choices, the weight of each sin |
+|  bore down upon him like the relentless pull of the tide. With  |
+|  determination etched into his weathered face, he began to      |
+|  unravel the mysteries of his past, seeking redemption in the   |
+|  depths of his own soul.                                        |
+|                                                                 |
+|  With each sin he deciphered, a glimmer of hope emerged amidst  |
+|  the darkness that engulfed him. The tribunal watched in        |
+|  silence, their judgment hanging in the balance.                |
+|                                                                 |
+|  "Gula," he muttered, recognizing the insatiable hunger that    |
+|  had driven him to plunder and pillage. With a heavy sigh, he   |
+|  confessed his gluttony, seeking absolution from the court.     |
+|                                                                 |
+|  One by one, he confronted his transgressions, facing his       |
+|  demons with unwavering resolve. Each revelation brought him    |
+|  closer to the truth, closer to freedom.                        |
+|                                                                 |
+|  And then, with a final word spoken, the chains that bound him  |
+|  fell away, crumbling like the walls of a long-forgotten        |
+|  fortress. As the echoes of his liberation reverberated through |
+|  the courtroom, the pirate stood tall, a man reborn.            |
+|                                                                 |
+|  Yet, his journey was far from over. With the weight of his     |
+|  sins lifted, he set sail once more, this time guided not by    |
+|  the lure of treasure, but by the beacon of redemption.         |
+|                                                                 |
+|  The winds of change whispered tales of his redemption,         |
+|  spreading his legend across the seven seas. For where once he  |
+|  was feared and reviled, now he was revered as a symbol of      |
+|  hope and second chances.                                       |
+|                                                                 |
+|  And as he disappeared into the horizon, his legacy endured,    |
+|  a testament to the power of redemption and the resilience of   |
+|  the human spirit.                                              |
+|_________________________________________________________________|
+"""
