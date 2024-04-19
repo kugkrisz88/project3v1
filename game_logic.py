@@ -57,7 +57,7 @@ class Game:
             self.check_guess(guess.lower())
         #Informs the player about the end state of the game (in both case prints out the word)    
         if set(self.word) == self.guesses:
-            print("Congratulations! You guessed the word:", self.word)
+            print("Congratulations! You guessed the word:", self.word.capitalize)
         else:
-            print("Sorry, you ran out of attempts. The word was:", self.word)
+            print("Sorry, you ran out of attempts. The word was:", self.word.capitalize)
             print(hangman_art_0)      
