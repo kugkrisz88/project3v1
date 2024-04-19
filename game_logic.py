@@ -46,28 +46,40 @@ class Game:
 
     # Runs the game loop until the game over function is true
     def run(self):
-        # Runs at the beginning of the game
-        print("[bold cyan]                    ##########################[/bold cyan]")
-        print("[bold cyan]                    # Welcome to the 7 tides #[/bold cyan]")
-        print("[bold cyan]                    ##########################[/bold cyan]")
-        print("[bold green]" + lore + "[/bold green]")
-        # Runs until game over is True
-        while not self.is_game_over():
-            print()
-            if self.attempts in hangman_art:
-                print("[bold yellow]" + hangman_art[self.attempts] + "[/bold yellow]")
+        #When game is over checks for "r" to reset the game
+        restart_game = True
 
-            print("[bold]Attempts left:[/bold] [blue]" + str(self.attempts) + "[/blue]")
+        while restart_game:
+            print("[bold cyan]                    ##########################[/bold cyan]")
+            print("[bold cyan]                    # Welcome to the 7 tides #[/bold cyan]")
+            print("[bold cyan]                    ##########################[/bold cyan]")
+            print("[bold green]" + lore + "[/bold green]")
+
+            while not self.is_game_over():
+                print()
+                if self.attempts in hangman_art:
+                    print("[bold yellow]" + hangman_art[self.attempts] + "[/bold yellow]")
+
+                print("[bold]Attempts left:[/bold] [blue]" + str(self.attempts) + "[/blue]")
+                print()
+                print("[bold]Word:[/bold] [green]" + self.display_word() + "[/green]")
+                print()
+                guess = input("Guess a letter: ")
+                print("[bold cyan]###################[/bold cyan]")
+                self.check_guess(guess.lower())
+
+            if set(self.word) == self.guesses:
+                print("[bold green]Congratulations! You guessed the word:[/bold green] [bold green]" + self.word.capitalize() + "[/bold green]")
+                print("[bold green]" + lore_end + "[/bold green]")
+            else:
+                print("[bold red]Sorry, you ran out of attempts. The word was:[/bold red] [bold red]" + self.word.capitalize() + "[/bold red]")
+                print("[bold red]" + hangman_art_0 + "[/bold red]")
+
             print()
-            print("[bold]Word:[/bold] [green]" + self.display_word() + "[/green]")
-            print()
-            guess = input("Guess a letter: ")
-            print("[bold cyan]###################[/bold cyan]")
-            self.check_guess(guess.lower())
-        # Informs the player about the end state of the game (in both cases, prints out the word)
-        if set(self.word) == self.guesses:
-            print("[bold green]Congratulations! You guessed the word:[/bold green] [bold green]" + self.word.capitalize() + "[/bold green]")
-            print("[bold green]" + lore_end + "[/bold green]")
-        else:
-            print("[bold red]Sorry, you ran out of attempts. The word was:[/bold red] [bold red]" + self.word.capitalize() + "[/bold red]")
-            print("[bold red]" + hangman_art_0 + "[/bold red]")
+            restart = input("Press the 'r' key to restart the game or any other key to exit: ")
+            if restart.lower() != "r":
+                restart_game = False
+            else:
+                self.word = self.get_random_word()
+                self.guesses = set()
+                self.attempts = 7
