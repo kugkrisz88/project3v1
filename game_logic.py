@@ -23,6 +23,11 @@ class Game:
 
     #Check if the guess is correct, if not take one attempt away
     def check_guess(self, guess):
+        #If the guess in not one character length or it is not a letter -> let the player know
+        if len(guess) != 1 or not guess.isalpha():
+            print("You can only enter one letter for your guess!")
+            return
+        guess = guess.lower()
         self.guesses.add(guess)
         if guess not in self.word:
             self.attempts -= 1
@@ -47,12 +52,12 @@ class Game:
             print()
             print("Word:", self.display_word())
             print()
-            guess = input("Guess a letter: ").lower()
+            guess = input("Guess a letter: ")
             print("###################")
-            self.check_guess(guess)
+            self.check_guess(guess.lower())
         #Informs the player about the end state of the game (in both case prints out the word)    
         if set(self.word) == self.guesses:
             print("Congratulations! You guessed the word:", self.word)
         else:
             print("Sorry, you ran out of attempts. The word was:", self.word)
-            print(hangman_art_0)
+            print(hangman_art_0)      
