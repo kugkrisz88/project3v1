@@ -1,13 +1,6 @@
 import random
-
-hangman_art_0 = """
- _______
- |     |
- |     O
- |    /|\\
- |    / \\
-_|_
-"""
+from word_list import words
+from visuals import *
 
 class Game:
     #Initialize the current condition of the game (default)
@@ -17,7 +10,6 @@ class Game:
         self.attempts = 7
     #A pool of random words and function to get a random word for the current game
     def get_random_word(self):
-        words = ["apple", "banana", "orange", "grape"]
         return random.choice(words)
     #A method to display the word with hidden letters (-)
     def display_word(self):
@@ -44,6 +36,7 @@ class Game:
         print("##########################")
         print("# Welcome to the 7 tides #")
         print("##########################")
+        print(lore)
         #Runs till game over is True
         while not self.is_game_over():
             print()
