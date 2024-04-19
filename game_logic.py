@@ -28,13 +28,18 @@ class Game:
             print("You can only enter one letter for your guess!")
             return
         guess = guess.lower()
+        # Check if the letter has already been guessed -> let the player know
+        if guess in self.guesses:
+            print("You already guessed this letter!")
+            return
+        guess = guess.lower()
         self.guesses.add(guess)
         if guess not in self.word:
             self.attempts -= 1
 
     #A method for checking game over conditions (The number of your attemps are 0 or you guessed the word)
     def is_game_over(self):
-        return self.attempts == 0 or set(self.word) == self.guesses
+        return self.attempts == 0 or set(self.word) == self.guesses or all(letter in self.guesses for letter in self.word)
     #Runs the game loop till the gameover function is true
     def run(self):
         #Runs at the beginning of the game
@@ -57,7 +62,7 @@ class Game:
             self.check_guess(guess.lower())
         #Informs the player about the end state of the game (in both case prints out the word)    
         if set(self.word) == self.guesses:
-            print("Congratulations! You guessed the word:", self.word.capitalize)
+            print("Congratulations! You guessed the word:", self.word.capitalize())
         else:
-            print("Sorry, you ran out of attempts. The word was:", self.word.capitalize)
+            print("Sorry, you ran out of attempts. The word was:", self.word.capitalize())
             print(hangman_art_0)      
