@@ -49,5 +49,3 @@ words = [
     "seabirds",
     "seaplane"
 ]
-
-words1 = ["infamous"]
