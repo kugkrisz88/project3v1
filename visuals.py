@@ -11,74 +11,75 @@ pride, its arrogance casting shadows darker than the depths
 where Leviathan slumbered...
                                      GAME OVER
 """
-hangman_art_1 = """
+hangman_art = {
+    1: """
  _______
  |     |
  |     O
  |    /|\\
  |    / \\
 _|_
-"Acedia," sighed the sixth, the sin of sloth, its lethargy     
+"Acedia," sighed the sixth, the sin of sloth, its lethargy
 more suffocating than the calm before the storm.
-"""
-hangman_art_2 = """
+""",
+    2: """
  _______
  |     |
  |     O
  |    /|\\
  |    /
 _|_
-"Ira," roared the fifth, the sin of wrath, its fury fiercer    
+"Ira," roared the fifth, the sin of wrath, its fury fiercer
 than the tempests that tore ships asunder.
-"""
-hangman_art_3 = """
+""",
+    3: """
  _______
  |     |
  |     O
  |    /|\\
- |    
+ |
 _|_
-"Tristitia," murmured the fourth, the sin of sorrow, its    
+"Tristitia," murmured the fourth, the sin of sorrow, its
 weight heavier than the anchor dragging a ship to the ocean floor.
-"""
-hangman_art_4 = """
+""",
+    4: """
  _______
  |     |
  |     O
  |    /|
- |    
+ |
 _|_
-"Avaritia," thundered the third, the sin of greed, its grip    
+"Avaritia," thundered the third, the sin of greed, its grip
 tighter than the clutches of Davy Jones himself.
-"""
-hangman_art_5 = """
+""",
+    5: """
  _______
  |     |
  |     O
  |     |
- |    
+ |
 _|_
 "Luxuria," echoed the second, the sin of lust, its allure
 like the siren's song beckoning sailors to their doom.
-"""
-hangman_art_6 = """
+""",
+    6: """
  _______
  |     |
  |     O
- |   
- |   
+ |
+ |
 _|_
 "Gula," spoke the first, the sin of gluttony, its craving
 like the hunger of the Kraken lurking beneath the waves.
-"""
-hangman_art_7 = """
+""",
+    7: """
  _______
  |     |
- |     
- |   
- |   
+ |
+ |
+ |
 _|_
-"""
+""" }
 
 lore = """
   ________________________________________________________________

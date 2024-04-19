@@ -40,6 +40,9 @@ class Game:
         #Runs till game over is True
         while not self.is_game_over():
             print()
+            if self.attempts in hangman_art:
+                print(hangman_art[self.attempts])
+
             print("Attempts left:", self.attempts)
             print()
             print("Word:", self.display_word())
