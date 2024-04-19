@@ -1,5 +1,5 @@
 # List of words for the game
-words1 = [
+words = [
     "adventure",
     "treasure",
     "marauder",
@@ -49,7 +49,3 @@ words1 = [
     "seabirds",
     "seaplane"
 ]
-
-words = [
-    "adventure",
-    "seagulls",]

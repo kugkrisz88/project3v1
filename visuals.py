@@ -9,7 +9,7 @@ _|_
 And lastly, "Superbia," declared the final sin, the sin of    
 pride, its arrogance casting shadows darker than the depths   
 where Leviathan slumbered...
-                                     GAME OVER
+                                 GAME OVER
 """
 hangman_art = {
     1: """
