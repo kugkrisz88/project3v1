@@ -42,7 +42,8 @@ class Game:
 
     # A method for checking game over conditions (The number of your attempts is 0 or you guessed the word)
     def is_game_over(self):
-        return self.attempts == 0 or set(self.word) == self.guesses or all(letter in self.guesses for letter in self.word)
+        unique_letters = set(self.word)
+        return self.attempts == 0 or unique_letters.issubset(self.guesses)
 
     # Runs the game loop until the game over function is true
     def run(self):
@@ -64,7 +65,7 @@ class Game:
                 print()
                 print("[bold]Word:[/bold] [green]" + self.display_word() + "[/green]")
                 print()
-                guess = input("Guess a letter: ")
+                guess = input("Guess a letter: \n")
                 print("[bold cyan]###################[/bold cyan]")
                 self.check_guess(guess.lower())
 

@@ -120,7 +120,7 @@ lore = """
 """
 lore_end = """
  ________________________________________________________________
-/                                                                 \
+/                                                                 \\
 |  As the pirate contemplated his choices, the weight of each sin |
 |  bore down upon him like the relentless pull of the tide. With  |
 |  determination etched into his weathered face, he began to      |
