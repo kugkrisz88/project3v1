@@ -40,10 +40,13 @@ class Game:
         if guess not in self.word:
             self.attempts -= 1
 
-    # A method for checking game over conditions (The number of your attempts is 0 or you guessed the word)
+    # A method for checking game over conditions (The number of your attempts) or isWinner conditions if all letters are in the guessed word
     def is_game_over(self):
+        return self.attempts == 0 or self.is_winner()
+
+    def is_winner(self):
         unique_letters = set(self.word)
-        return self.attempts == 0 or unique_letters.issubset(self.guesses)
+        return unique_letters.issubset(self.guesses)
 
     # Runs the game loop until the game over function is true
     def run(self):
@@ -55,7 +58,7 @@ class Game:
             print("[bold cyan]                    # Welcome to the 7 tides #[/bold cyan]")
             print("[bold cyan]                    ##########################[/bold cyan]")
             print("[bold green]" + lore + "[/bold green]")
-
+            #If you run out of attempts print Game Over screen
             while not self.is_game_over():
                 print()
                 if self.attempts in hangman_art:
@@ -68,8 +71,8 @@ class Game:
                 guess = input("Guess a letter: \n")
                 print("[bold cyan]###################[/bold cyan]")
                 self.check_guess(guess.lower())
-
-            if set(self.word) == self.guesses:
+            #If you guessed all letters print Winner screen
+            if self.is_winner():
                 print("[bold green]Congratulations! You guessed the word:[/bold green] [bold green]" + self.word.capitalize() + "[/bold green]")
                 print("[bold green]" + lore_end + "[/bold green]")
             else:
